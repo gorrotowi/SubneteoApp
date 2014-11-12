@@ -1039,13 +1039,13 @@ ArrayAdapter<CharSequence> adapter8;
         setContentView(R.layout.activity_main);
         
         //((AdView)findViewById()).loadAd(new AdRequest());
-        this.ComboNM = ((Spinner)findViewById());
+        this.ComboNM = ((Spinner)findViewById(R.id.spBits));
         this.DireccionIP = ((EditText)findViewById(R.id.edtxIP));
-        this.Clas = ((TextView)findViewById());
+        this.Clas = ((TextView)findViewById(R.id.claseRed));
         this.Resul = ((EditText)findViewById());
         this.NM = ((EditText)findViewById());
         this.Boton = ((Button)findViewById(R.id.btnCalcIP));
-        this.TVIPConvert = ((TextView)findViewById());
+        this.TVIPConvert = ((TextView)findViewById(R.id.BinConvertIP));
         this.TVNMConvert = ((TextView)findViewById());
         this.adapter24 = ArrayAdapter.createFromResource(this, 2131034112, 17367048);
         this.adapter24.setDropDownViewResource();
