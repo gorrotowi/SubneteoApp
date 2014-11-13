@@ -1,5 +1,7 @@
 package com.unam.subneteo;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +18,10 @@ public class MainActivity extends Activity {
 	EditText edtxOct1, edtxOct2, edtxOct3, edtxOct4, edtxNumHost;
 	TextView txtClaseValida;
 	Button btn;
+	ListView lista;
 	int oct1, oct2, oct3, oct4;
+	ListIPAdapder adapter;
+	ArrayList<ItemListIP> item;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +35,7 @@ public class MainActivity extends Activity {
 		edtxNumHost = (EditText) findViewById(R.id.edtxNumHost);
 		txtClaseValida = (TextView) findViewById(R.id.txtTipoClase);
 		btn = (Button) findViewById(R.id.btnCalcular);
+		lista = (ListView) findViewById(R.id.listViewIp);
 
 		btn.setOnClickListener(new OnClickListener() {
 
@@ -72,7 +79,7 @@ public class MainActivity extends Activity {
 	public void calcularMascara() {
 		String tipoSubred = "";
 		int bits = Integer.parseInt(edtxNumHost.getText().toString()) - 24;
-		if (bits <= 0) {
+		if (bits < 0) {
 			Toast.makeText(MainActivity.this, "Mascara no valida",
 					Toast.LENGTH_SHORT).show();
 		} else {
@@ -97,14 +104,21 @@ public class MainActivity extends Activity {
 						&& ultimoOctectoInt < ultimoHost) {
 					tipoSubred = "Host";
 				} else {
-					tipoSubred = "No se D:";
+					tipoSubred = "-";
 				}
 				Log.d("Nombre de red", primerosTresOctetos + nombre);
 				Log.d("Nombre de primer Host", primerosTresOctetos + primerHost);
 				Log.d("Nombre de ultimo Host", primerosTresOctetos + ultimoHost);
 				Log.d("Nombre del BroadCast", primerosTresOctetos + broadCast);
 				Log.i("Tipo de red", tipoSubred);
+				item = new ArrayList<ItemListIP>();
+				item.add(new ItemListIP(nombre + "", primerosTresOctetos
+						+ primerHost, primerosTresOctetos + ultimoHost,
+						primerosTresOctetos + broadCast, tipoSubred));
 			}
+			adapter = new ListIPAdapder(MainActivity.this,
+					R.layout.item_listip, item);
+			lista.setAdapter(adapter);
 		}
 
 	}
