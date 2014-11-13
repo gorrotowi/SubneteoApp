@@ -1,293 +1,133 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent" >
-
-    <RelativeLayout 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#2196F3">
+    android:padding="10dp" >
 
     <TextView
-        android:id="@+id/txtIngresa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="18dp"
-        android:text="Subneteo IP"
-        android:textStyle="bold"
-        android:textColor="#FFF"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    
-    </RelativeLayout>
-    
-    <LinearLayout 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:orientation="horizontal">
-        
-    <TextView
-        android:id="@+id/txtIP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="IP: "
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="Ingresa direccion IP"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/edtxIP"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:maxLines="1"
-        android:maxLength="15"
-        android:textColor="#fff"
-        android:background="#80D8FF"
-        android:inputType="phone" >
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
-        <requestFocus />
-    </EditText>
+        <EditText
+            android:id="@+id/edtxOct1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="." />
+
+        <EditText
+            android:id="@+id/edtxOct2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="." />
+
+        <EditText
+            android:id="@+id/edtxOct3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="." />
+
+        <EditText
+            android:id="@+id/edtxOct4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1" />
     </LinearLayout>
-    
-	<LinearLayout 
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:orientation="horizontal">
-                   <TextView
-                       android:id="@+id/textView1"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_marginLeft="10dp"
-                       android:layout_marginTop="18dp"
-                       android:text="Mascara de subred: "
-                       android:textSize="15sp"
-                       android:textStyle="bold" />
+        android:layout_margin="10dp"
+        android:orientation="horizontal" >
 
-                   <Spinner
-                       android:id="@+id/spBits"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:layout_marginBottom="10dp"
-                       android:layout_marginRight="10dp" />
-                   
-                   </LinearLayout>
-                   
-	<RelativeLayout 
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Numeros de Host"
+            android:textSize="18sp" />
 
-	<TextView
-	    android:id="@+id/txtMascaraSubred"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignParentTop="true"
-	    android:layout_centerHorizontal="true"
-	    android:text=""
-	    android:textSize="15sp"
-	    android:textStyle="bold" />
-	
-	</RelativeLayout>
+        <EditText
+            android:id="@+id/edtxNumHost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ip de clase se valida: "
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtTipoClase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text=" - "
+            android:textSize="16sp" />
+    </LinearLayout>
 
     <Button
-        android:id="@+id/btnCalcIP"
-        android:layout_width="match_parent"
+        android:id="@+id/btnCalcular"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#01579B"
-        android:textColor="#FFF"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:textSize="20sp"
+        android:layout_gravity="end|right"
         android:text="Calcular" />
-    
-   <RelativeLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:layout_marginTop="10dp"
-       android:layout_marginRight="10dp"
-       android:layout_marginLeft="10dp"
-       android:layout_marginBottom="10dp"
-       android:background="@drawable/rounded_btns" >
-    
-       <ScrollView
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:layout_alignParentRight="true" >
-        
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="5dp"
-               android:orientation="vertical" >
-               
-
-               <LinearLayout 
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:layout_marginTop="15dp"
-                   android:layout_marginLeft="15dp"
-                   android:layout_marginRight="15dp"
-                   android:orientation="horizontal">
-
-               <TextView
-                   android:id="@+id/textView2"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginLeft="10dp"
-                   android:text="id de subred: "
-                   android:textStyle="bold" />
-
-               <TextView
-                   android:id="@+id/txtIdSubRed"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginLeft="68dp"
-                   android:text="1111"
-                   android:textStyle="bold" />
-               
-               </LinearLayout>
-               
-               <LinearLayout 
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:layout_marginTop="15dp"
-                   android:layout_marginLeft="15dp"
-                   android:layout_marginRight="15dp"
-                   android:orientation="horizontal">
-
-               <TextView
-                   android:id="@+id/textView03"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginLeft="10dp"
-                   android:text="Subred: "
-                   android:textStyle="bold" />
-
-               <TextView
-                   android:id="@+id/txtSubred"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginLeft="68dp"
-                   android:text="1111"
-                   android:textStyle="bold" />
-               
-               </LinearLayout>
-               
-               <LinearLayout 
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:layout_marginTop="15dp"
-                   android:layout_marginLeft="15dp"
-                   android:layout_marginRight="15dp"
-                   android:orientation="horizontal">
-
-               <TextView
-                   android:id="@+id/textView04"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginLeft="10dp"
-                   android:text="Host: "
-                   android:textStyle="bold" />
-
-               <TextView
-                   android:id="@+id/txtHostred"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginLeft="68dp"
-                   android:text="1111"
-                   android:textStyle="bold" />
-               
-               </LinearLayout>
-               
-               <LinearLayout 
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:layout_marginTop="15dp"
-                   android:layout_marginLeft="15dp"
-                   android:layout_marginRight="15dp"
-                   android:orientation="horizontal">
-
-               <TextView
-                   android:id="@+id/textView05"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginLeft="10dp"
-                   android:text="Número de subred: "
-                   android:textStyle="bold" />
-
-               <TextView
-                   android:id="@+id/numeroSubred"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginLeft="68dp"
-                   android:text="1111"
-                   android:textStyle="bold" />
-               
-               </LinearLayout>
-               
-               <LinearLayout 
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:layout_marginTop="15dp"
-                   android:layout_marginLeft="15dp"
-                   android:layout_marginRight="15dp"
-                   android:orientation="horizontal">
-
-               <TextView
-                   android:id="@+id/textView06"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginLeft="10dp"
-                   android:text="Clase: "
-                   android:textStyle="bold" />
-
-               <TextView
-                   android:id="@+id/claseRed"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginLeft="68dp"
-                   android:text="1111"
-                   android:textStyle="bold" />
-               </LinearLayout>
-               
-               <LinearLayout 
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:layout_marginTop="15dp"
-                   android:layout_marginLeft="15dp"
-                   android:layout_marginRight="15dp"
-                   android:orientation="horizontal">
-
-               <TextView
-                   android:id="@+id/textView07"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginLeft="10dp"
-                   android:text="Binario: "
-                   android:textStyle="bold" />
-
-               <TextView
-                   android:id="@+id/BinConvertIP"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginLeft="68dp"
-                   android:text="1111"
-                   android:textStyle="bold" />
-               
-               </LinearLayout>
-               
-               
-           </LinearLayout>
-           
-       </ScrollView>
-       
-   </RelativeLayout>
 
 </LinearLayout>
